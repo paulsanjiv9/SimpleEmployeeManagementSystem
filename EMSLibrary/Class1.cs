@@ -5,7 +5,19 @@ using System.Text;
 
 namespace EMSLibrary
 {
-    public class Class1
+    public class DealwithDatabase
     {
+        public void connect
+        {
+
+        }
+        public void Insert
+        {
+
+        }
+        public void Select
+        {
+
+        }
     }
 }

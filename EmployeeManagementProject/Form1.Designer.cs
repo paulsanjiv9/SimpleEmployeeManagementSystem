@@ -56,12 +56,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_addmanagers = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_adddepartment = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -165,6 +165,7 @@
             // 
             // dob
             // 
+            this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dob.Location = new System.Drawing.Point(239, 150);
             this.dob.Name = "dob";
             this.dob.Size = new System.Drawing.Size(200, 20);
@@ -269,6 +270,7 @@
             this.btn_submit.TabIndex = 37;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click_1);
             // 
             // tabPage3
             // 
@@ -282,7 +284,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btn_adddepartment);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.textBox3);
@@ -294,7 +296,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_addmanagers);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.textBox2);
@@ -336,14 +338,15 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Manager Name";
             // 
-            // button1
+            // btn_addmanagers
             // 
-            this.button1.Location = new System.Drawing.Point(75, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_addmanagers.Location = new System.Drawing.Point(75, 148);
+            this.btn_addmanagers.Name = "btn_addmanagers";
+            this.btn_addmanagers.Size = new System.Drawing.Size(108, 30);
+            this.btn_addmanagers.TabIndex = 4;
+            this.btn_addmanagers.Text = "Submit";
+            this.btn_addmanagers.UseVisualStyleBackColor = true;
+            this.btn_addmanagers.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -381,14 +384,15 @@
             this.textBox4.TabIndex = 4;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // button2
+            // btn_adddepartment
             // 
-            this.button2.Location = new System.Drawing.Point(86, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 36);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_adddepartment.Location = new System.Drawing.Point(86, 148);
+            this.btn_adddepartment.Name = "btn_adddepartment";
+            this.btn_adddepartment.Size = new System.Drawing.Size(114, 36);
+            this.btn_adddepartment.TabIndex = 8;
+            this.btn_adddepartment.Text = "Submit";
+            this.btn_adddepartment.UseVisualStyleBackColor = true;
+            this.btn_adddepartment.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -443,12 +447,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_addmanagers;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_adddepartment;
     }
 }
 
