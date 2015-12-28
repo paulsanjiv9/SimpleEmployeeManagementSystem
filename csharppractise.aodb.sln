@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementProject", "EmployeeManagementProject\EmployeeManagementProject.csproj", "{46A4DE19-CC5B-4147-8CB6-D2C2927D13EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMSLibrary", "EMSLibrary\EMSLibrary.csproj", "{91F65B98-7520-4297-B270-FF015FEA426D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{46A4DE19-CC5B-4147-8CB6-D2C2927D13EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A4DE19-CC5B-4147-8CB6-D2C2927D13EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A4DE19-CC5B-4147-8CB6-D2C2927D13EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F65B98-7520-4297-B270-FF015FEA426D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F65B98-7520-4297-B270-FF015FEA426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F65B98-7520-4297-B270-FF015FEA426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F65B98-7520-4297-B270-FF015FEA426D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
