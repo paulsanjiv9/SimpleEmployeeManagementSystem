@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EmployeeManagementProject
+namespace EMSLibrary
 {
-    class Employee
+    public struct Employee
     {
         int emp_id;
         string emp_name;
@@ -64,6 +64,7 @@ namespace EmployeeManagementProject
             get { return address; }
             set { address = value; }
         }
-
+       
+       
     };
 }
