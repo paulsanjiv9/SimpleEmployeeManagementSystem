@@ -40,7 +40,7 @@ namespace EMSLibrary
             cmd.Parameters.AddWithValue("@dateofjoin", em.Dateofjoin);
             cmd.Parameters.AddWithValue("@dateofbirth", em.Dob);
             cmd.Parameters.AddWithValue("@dept", em.Dept);
-            cmd.Parameters.AddWithValue("@address", em.Address);
+            cmd.Parameters.AddWithValue("@address", em.managerid);
 
 
             return cmd.ExecuteNonQuery();
@@ -57,6 +57,30 @@ namespace EMSLibrary
             dt.Load(dr);
             return dt;
             
+        }
+        public DataTable RetrieveManagerList()
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = createconnection();
+            cmd.CommandText = "Select * from dbo.tbl_manager";
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            return dt;
+          
+
+        }
+         public DataTable RetrieveEmployeeVsManager()//used a inner join here
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = createconnection();
+            cmd.CommandText =  "SELECT Empno, EName, manager_name FROM dbo.tbl_employee INNER JOIN dbo.tbl_manager ON dbo.tbl_employee.manager_id=dbo.tbl_manager.manager_id"; 
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            return dt;
         }
         public int FetchMaxId()
         {

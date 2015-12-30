@@ -38,7 +38,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_address = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,29 +48,31 @@
             this.btn_submit = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.combo_dept = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.combo_department2 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btn_addmanagers = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_mname = new System.Windows.Forms.TextBox();
             this.txt_mid = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label12 = new System.Windows.Forms.Label();
-            this.combo_department2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.combo_dept = new System.Windows.Forms.ComboBox();
+            this.combo_Manager = new System.Windows.Forms.ComboBox();
+            this.txt_managerid = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,6 +100,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_managerid);
+            this.panel1.Controls.Add(this.combo_Manager);
             this.panel1.Controls.Add(this.combo_department);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.doj);
@@ -106,7 +109,6 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_address);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -162,9 +164,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(77, 227);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 48;
-            this.label7.Text = "Address";
+            this.label7.Text = "Manager ID";
             // 
             // label6
             // 
@@ -183,13 +185,6 @@
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 46;
             this.label5.Text = "Date of Birth";
-            // 
-            // txt_address
-            // 
-            this.txt_address.Location = new System.Drawing.Point(239, 220);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(200, 20);
-            this.txt_address.TabIndex = 45;
             // 
             // label4
             // 
@@ -282,6 +277,37 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // combo_dept
+            // 
+            this.combo_dept.FormattingEnabled = true;
+            this.combo_dept.Items.AddRange(new object[] {
+            "Computer",
+            "Mechanical",
+            "Administration",
+            "Please Select"});
+            this.combo_dept.Location = new System.Drawing.Point(155, 39);
+            this.combo_dept.Name = "combo_dept";
+            this.combo_dept.Size = new System.Drawing.Size(200, 21);
+            this.combo_dept.TabIndex = 54;
+            this.combo_dept.SelectedIndexChanged += new System.EventHandler(this.combo_dept_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(234, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "View Employees Under Manager By Department";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(33, 111);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(746, 231);
+            this.dataGridView2.TabIndex = 8;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -314,6 +340,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(846, 457);
             this.panel3.TabIndex = 0;
+            // 
+            // combo_department2
+            // 
+            this.combo_department2.FormattingEnabled = true;
+            this.combo_department2.Items.AddRange(new object[] {
+            "Computer",
+            "Mechanical",
+            "Administration",
+            "Please Select"});
+            this.combo_department2.Location = new System.Drawing.Point(150, 117);
+            this.combo_department2.Name = "combo_department2";
+            this.combo_department2.Size = new System.Drawing.Size(221, 21);
+            this.combo_department2.TabIndex = 53;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(30, 125);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Department";
             // 
             // btn_addmanagers
             // 
@@ -362,58 +410,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label12
+            // combo_Manager
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(30, 125);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Department";
+            this.combo_Manager.FormattingEnabled = true;
+            this.combo_Manager.Location = new System.Drawing.Point(239, 223);
+            this.combo_Manager.Name = "combo_Manager";
+            this.combo_Manager.Size = new System.Drawing.Size(61, 21);
+            this.combo_Manager.TabIndex = 53;
             // 
-            // combo_department2
+            // txt_managerid
             // 
-            this.combo_department2.FormattingEnabled = true;
-            this.combo_department2.Items.AddRange(new object[] {
-            "Computer",
-            "Mechanical",
-            "Administration",
-            "Please Select"});
-            this.combo_department2.Location = new System.Drawing.Point(150, 117);
-            this.combo_department2.Name = "combo_department2";
-            this.combo_department2.Size = new System.Drawing.Size(200, 21);
-            this.combo_department2.TabIndex = 53;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(33, 111);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(746, 231);
-            this.dataGridView2.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(234, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "View Employees Under Manager By Department";
-            // 
-            // combo_dept
-            // 
-            this.combo_dept.FormattingEnabled = true;
-            this.combo_dept.Items.AddRange(new object[] {
-            "Computer",
-            "Mechanical",
-            "Administration",
-            "Please Select"});
-            this.combo_dept.Location = new System.Drawing.Point(155, 39);
-            this.combo_dept.Name = "combo_dept";
-            this.combo_dept.Size = new System.Drawing.Size(200, 21);
-            this.combo_dept.TabIndex = 54;
-            this.combo_dept.SelectedIndexChanged += new System.EventHandler(this.combo_dept_SelectedIndexChanged);
+            this.txt_managerid.Enabled = false;
+            this.txt_managerid.Location = new System.Drawing.Point(306, 224);
+            this.txt_managerid.Name = "txt_managerid";
+            this.txt_managerid.Size = new System.Drawing.Size(133, 20);
+            this.txt_managerid.TabIndex = 54;
             // 
             // Form1
             // 
@@ -432,10 +443,10 @@
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,7 +464,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -477,6 +487,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ComboBox combo_dept;
+        private System.Windows.Forms.ComboBox combo_Manager;
+        private System.Windows.Forms.TextBox txt_managerid;
     }
 }
 

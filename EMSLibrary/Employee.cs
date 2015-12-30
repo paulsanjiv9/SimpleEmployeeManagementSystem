@@ -13,7 +13,7 @@ namespace EMSLibrary
         DateTime dateofjoin;
         DateTime dob;
         string dept;
-        string address;
+        string manager_id;
         public int Emp_id
         {
             get { return emp_id; }
@@ -59,10 +59,10 @@ namespace EMSLibrary
         }
 
 
-        public string Address
+        public string managerid
         {
-            get { return address; }
-            set { address = value; }
+            get { return manager_id; }
+            set { manager_id = value; }
         }
        
        
