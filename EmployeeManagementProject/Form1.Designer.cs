@@ -49,19 +49,20 @@
             this.btn_submit = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_adddepartment = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_addmanagers = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_mname = new System.Windows.Forms.TextBox();
+            this.txt_mid = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label12 = new System.Windows.Forms.Label();
+            this.combo_department2 = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.combo_dept = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,6 +71,7 @@
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -263,82 +265,51 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(870, 514);
+            this.tabPage2.Size = new System.Drawing.Size(1014, 567);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add Departments";
+            this.tabPage2.Text = "View Employees/Managers";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btn_adddepartment);
+            this.panel2.Controls.Add(this.combo_dept);
             this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox4);
             this.panel2.Location = new System.Drawing.Point(12, 11);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(848, 451);
             this.panel2.TabIndex = 0;
-            // 
-            // btn_adddepartment
-            // 
-            this.btn_adddepartment.Location = new System.Drawing.Point(86, 148);
-            this.btn_adddepartment.Name = "btn_adddepartment";
-            this.btn_adddepartment.Size = new System.Drawing.Size(114, 36);
-            this.btn_adddepartment.TabIndex = 8;
-            this.btn_adddepartment.Text = "Submit";
-            this.btn_adddepartment.UseVisualStyleBackColor = true;
-            this.btn_adddepartment.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 87);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Department Name";
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(43, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Department ID";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(162, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(162, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 20);
-            this.textBox4.TabIndex = 4;
+            this.label11.Text = "Department ";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(870, 514);
+            this.tabPage3.Size = new System.Drawing.Size(1014, 567);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Add Managers";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.combo_department2);
+            this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.btn_addmanagers);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txt_mname);
+            this.panel3.Controls.Add(this.txt_mid);
             this.panel3.Location = new System.Drawing.Point(13, 11);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(846, 457);
@@ -372,23 +343,77 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Manager ID";
             // 
-            // textBox2
+            // txt_mname
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 20);
-            this.textBox2.TabIndex = 1;
+            this.txt_mname.Location = new System.Drawing.Point(150, 78);
+            this.txt_mname.Name = "txt_mname";
+            this.txt_mname.Size = new System.Drawing.Size(221, 20);
+            this.txt_mname.TabIndex = 1;
             // 
-            // textBox1
+            // txt_mid
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_mid.Enabled = false;
+            this.txt_mid.Location = new System.Drawing.Point(150, 33);
+            this.txt_mid.Name = "txt_mid";
+            this.txt_mid.Size = new System.Drawing.Size(221, 20);
+            this.txt_mid.TabIndex = 0;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(30, 125);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Department";
+            // 
+            // combo_department2
+            // 
+            this.combo_department2.FormattingEnabled = true;
+            this.combo_department2.Items.AddRange(new object[] {
+            "Computer",
+            "Mechanical",
+            "Administration",
+            "Please Select"});
+            this.combo_department2.Location = new System.Drawing.Point(150, 117);
+            this.combo_department2.Name = "combo_department2";
+            this.combo_department2.Size = new System.Drawing.Size(200, 21);
+            this.combo_department2.TabIndex = 53;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(33, 111);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(746, 231);
+            this.dataGridView2.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(234, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "View Employees Under Manager By Department";
+            // 
+            // combo_dept
+            // 
+            this.combo_dept.FormattingEnabled = true;
+            this.combo_dept.Items.AddRange(new object[] {
+            "Computer",
+            "Mechanical",
+            "Administration",
+            "Please Select"});
+            this.combo_dept.Location = new System.Drawing.Point(155, 39);
+            this.combo_dept.Name = "combo_dept";
+            this.combo_dept.Size = new System.Drawing.Size(200, 21);
+            this.combo_dept.TabIndex = 54;
+            this.combo_dept.SelectedIndexChanged += new System.EventHandler(this.combo_dept_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -410,6 +435,7 @@
             this.tabPage3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,18 +464,19 @@
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_addmanagers;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_adddepartment;
+        private System.Windows.Forms.TextBox txt_mname;
+        private System.Windows.Forms.TextBox txt_mid;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox combo_department2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox combo_dept;
     }
 }
 

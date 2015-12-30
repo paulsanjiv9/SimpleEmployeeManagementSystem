@@ -70,6 +70,46 @@ namespace EMSLibrary
                 maxId = maxId + 1;
                 return maxId;
         }
+        public int InsertManager(Manager mger)
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = createconnection();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into dbo.tbl_manager values (@id,@manager_name,@department)";
+            cmd.Parameters.AddWithValue("@id", mger.Managerid);
+            cmd.Parameters.AddWithValue("@manager_name", mger.Managername);
+            cmd.Parameters.AddWithValue("@department", mger.Department);     
+             return cmd.ExecuteNonQuery();
+        }
+
+        public int FetchManagerID()
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = createconnection();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select MAX(manager_id) from dbo.tbl_manager";
+
+            int maxId = Convert.ToInt32(cmd.ExecuteScalar());
+            con.Close();
+            maxId = maxId + 1;
+            return maxId;
+        }
+        public void InsertDepartment()
+        {
+
+        }
+        public int FetchDepartmentId()
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = createconnection();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select MAX(Empno) from dbo.tbl_employee";
+
+            int maxId = Convert.ToInt32(cmd.ExecuteScalar());
+            con.Close();
+            maxId = maxId + 1;
+            return maxId;
+        }
     }
 }
 
